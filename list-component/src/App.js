@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const array_1 = [
+    'pedro',
+    'miguel',
+    'luis',
+    'leandro',
+    'jubileu'
+  ]
+
+  // map array_1 into a new array of JSX nodes(listItems)
+  // JSX transforms the values into an XML like format
+  const listItems = array_1.map(person => <li>{person}</li>);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <ul className="ulStyled">
+        {listItems}
+      </ul>
     </div>
   );
 }
