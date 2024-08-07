@@ -32,6 +32,7 @@ const Weather = () => {
         };
     
         // get user location
+        // check if user accepted the location prompt
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(handleGeolocationSuccess, handleGeolocationError);
         } else {
