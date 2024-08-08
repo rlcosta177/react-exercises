@@ -36,7 +36,7 @@ const Weather = () => {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(handleGeolocationSuccess, handleGeolocationError);
         } else {
-          console.log('error line 38');
+          console.log('error line 39');
         }
       }, []);
 

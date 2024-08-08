@@ -31,7 +31,7 @@ class App extends React.Component {
   render() {
     // destructing syntax to reduce memory allocation
     // const { advice } = this.state;
-    // and
+    //             and
     // const advice = this.state.advice;
     // are the same, but the former is more memory effecient and less repetitive
     const { advice } = this.state;
