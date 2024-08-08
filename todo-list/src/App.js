@@ -12,36 +12,29 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // Setting up state
     this.state = {
       userInput: "",
       list: [],
     };
   }
 
-  // Set a user input value
   updateInput(value) {
     this.setState({
       userInput: value,
     });
   }
 
-  // Add item if user input in not empty
   addItem() {
     if (this.state.userInput !== "") {
       const userInput = {
-        // Add a random id which is used to delete
         id: Math.random(),
 
-        // Add a user value to list
         value: this.state.userInput,
       };
 
-      // Update list
       const list = [...this.state.list];
       list.push(userInput);
 
-      // reset state
       this.setState({
         list,
         userInput: "",
@@ -49,14 +42,11 @@ class App extends Component {
     }
   }
 
-  // Function to delete item from list use id to delete
   deleteItem(key) {
     const list = [...this.state.list];
 
-    // Send all tasks that are NOT the one we deleted into the new list.
     const updateList = list.filter((item) => item.id !== key);
 
-    // Update list with every task exept the one we deleted
     this.setState({
       list: updateList,
     });
@@ -118,7 +108,6 @@ class App extends Component {
         <Row>
           <Col md={{ span: 5, offset: 4 }}>
             <ListGroup>
-              {/* map over and print items */}
               {this.state.list.map((item, index) => {
                 return (
                   <div key={index} >
