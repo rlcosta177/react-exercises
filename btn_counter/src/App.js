@@ -3,9 +3,11 @@ import React, { useState } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
 
+  // setCount = count(current value) + 1
   const increment = () => {
     setCount(count + 1);
   };
+  // setCount = count(current value) - 1
   const decrement = () => {
     setCount(count - 1);
   };
