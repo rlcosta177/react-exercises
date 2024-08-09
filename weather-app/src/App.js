@@ -21,9 +21,12 @@ const Weather = () => {
             console.log(error.message);
           }
         };
-    
+
+        // position comes from getCurrentPosition(a hidden parameter is passed)
         const handleGeolocationSuccess = (position) => {
+          // give the lat and lon values to the newly created vars
           const { latitude, longitude } = position.coords;
+          // set the weatherData values  
           fetchWeather(latitude, longitude);
         };
     
