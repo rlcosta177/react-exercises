@@ -10,13 +10,16 @@ function App() {
 
   useEffect(() => {
     socket.on('message', (message) => {
+      // whenever a new message is sent, create a new array based on the existing state(...messages) 
+      // and add the newest message to the array
       setMessages([...messages, message]);
     });
-  }, [messages]);
+  });
 
+  // if messageText is empty, dont send
   const sendMessage = () => {
     if (!messageText) {
-      console.log('nope')
+      console.log('no message was sent bruv')
     }
     else {
       socket.emit('sendMessage', { text: messageText });

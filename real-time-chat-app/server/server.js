@@ -16,13 +16,16 @@ const io = socketIo(server, {
     }
 });
 
+// do something wheneve a new client is connected
 io.on('connection', (socket) => {
     console.log('New user connected');
 
+    // when a client sends a message, emit it to the client side(handled there)
     socket.on('sendMessage', (message) => {
-        io.emit('message', message); // Broadcast the message to all connected clients
+        io.emit('message', message);
     });
   
+    // on disconnect message..
     socket.on('disconnect', () => {
       console.log('User disconnected');
     });

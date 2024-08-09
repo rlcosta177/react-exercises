@@ -1,24 +1,21 @@
 import { useState, useEffect } from 'react'
 
 function App() {
-  // Define a list of colors
   const colors = ["red", "green", "blue", "yellow", "purple", "orange", "pink"]
 
-  // Initialize state with the first color or any color you prefer
   const [color, setColor] = useState("blue")
 
-  // Function to get a random color from the list
+  // get a random color from the colors array
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * colors.length)
     return colors[randomIndex]
   }
 
-  // Function to handle the button click
+  // whenever the button is clicked, change the background color base on getRandomColor
   const handleClick = () => {
     setColor(getRandomColor())
   }
 
-  // Update the background color when the color state changes
   useEffect(() => {
     document.body.style.backgroundColor = color
   }, [color])

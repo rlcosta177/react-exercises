@@ -15,7 +15,7 @@ export function App() {
     {id:2, name: "iceberg", calories: 39}, 
     {id:3, name: "bingchilling", calories: 142}, 
     {id:4, name: "cepo", calories: 23}, 
-    {id:5, name: "fkinMIKEWAZOWSKY", calories: 111}
+    {id:5, name: "fkinMIKEWAZOWSKI", calories: 111}
   ];
 
   return (

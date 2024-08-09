@@ -43,16 +43,21 @@ class App extends Component {
   }
 
   deleteItem(key) {
+    // create a new list as a shallow copy, so as to not affect the original list
     const list = [...this.state.list];
 
+    // create a new updated list based on the shallow copy
+    // that excludes the deleted item from it
     const updateList = list.filter((item) => item.id !== key);
 
+    // update the list state to have every item except the one that was deleted
     this.setState({
       list: updateList,
     });
   }
 
   editItem = (index) => {
+    // create a new list as a shallow copy, so as to not affect the original list
     const todos = [...this.state.list];
     const editedTodo = prompt('Edit the todo:');
     if (editedTodo !== null && editedTodo.trim() !== '') {
