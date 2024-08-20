@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-// props is used to display button text, not to receive state changes
+// the props here is used to display button text, not to receive state changes
 function FetchButton(props) {
   // questionCategory == selected question_category | THIS IS DONE IN Settings.js
   const questionCategory = useSelector(
@@ -21,7 +21,8 @@ function FetchButton(props) {
 
   // Actions + Dispatch at the same time.
   // saves a lot of time
-  // whenever 
+  // whenever 'setLoading' is called, dispatch the action with the recieved value
+  // changing it in the process
   const setLoading = (value) => {
     dispatch({
       type: 'CHANGE_LOADING',
